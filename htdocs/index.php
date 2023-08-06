@@ -48,7 +48,7 @@ class IndexAction implements Action
 
         $smarty = $context->getSmarty();
         $smarty->assign('config', $context->config);
-        $smarty->assign('workdId', $workId);
+        $smarty->assign('workId', $workId);
         $smarty->assign('work', $work);
         $smarty->display('atom.tpl');
     }
