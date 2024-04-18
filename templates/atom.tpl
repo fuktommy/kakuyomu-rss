@@ -4,7 +4,7 @@
   <title>{$work->title}</title>
   <subtitle>{$work->title} の新着エピソード</subtitle>
   <link rel="self" href="{$config.site_top}/{$workId}" />
-  <link rel="alternate" href="{$config.kakuyomu_top}/{$workId|escape:'url'}" type="text/html"/>
+  <link rel="alternate" href="{$config.kakuyomu_top}/works/{$workId|escape:'url'}" type="text/html"/>
   <updated>{if $work->episodes}{$work->episodes[0]->date|atom_date_format}{else}{$smarty.now|atom_date_format}{/if}</updated>
   <generator>https://github.com/fuktommy/kakuyomu-rss</generator>
   <author><name>{$work->author}</name></author>

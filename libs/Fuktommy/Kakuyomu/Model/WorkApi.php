@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2012-2021 Satoshi Fukutomi <info@fuktommy.com>.
+ * Copyright (c) 2012-2024 Satoshi Fukutomi.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -63,10 +63,10 @@ class WorkApi
         $author = $xpath->query('//*[@id="workAuthor-activityName"]')->item(0)->textContent;
 
         $episodes = [];
-        foreach ($xpath->query('//a[contains(@class,"widget-toc-episode-episodeTitle")]') as $e) {
+        foreach ($xpath->query('//a[contains(@class,"WorkTocSection_link__")]') as $e) {
             $episodes[] = new Episode(
                 $e->getAttribute('href'),
-                $xpath->query('.//*[contains(@class,"widget-toc-episode-titleLabel")]', $e)->item(0)->textContent,
+                $xpath->query('.//*[contains(@class,"WorkTocSection_title__")]', $e)->item(0)->textContent,
                 $xpath->query('.//*[@datetime]', $e)->item(0)->getAttribute('datetime')
             );
         }
