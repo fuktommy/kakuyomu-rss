@@ -60,7 +60,7 @@ class WorkApi
         $xpath = new \DOMXpath($doc);
 
         $title = $xpath->query('//title')->item(0)->textContent;
-        $author = $xpath->query('//*[@id="workAuthor-activityName"]')->item(0)->textContent;
+        $author = $xpath->query('//*[contains(@class,"partialGiftWidgetActivityName")]')->item(0)->textContent;
 
         $episodes = [];
         foreach ($xpath->query('//a[contains(@class,"WorkTocSection_link__")]') as $e) {
